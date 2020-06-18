@@ -92,14 +92,14 @@ gulp.task('release', taskSeries(cleanReleaseTask, function() {
 			.pipe(gulp.dest('release')),
 
 		// min-maps folder
-		gulp.src('node_modules/monaco-editor-core/min-maps/**/*')
+		gulp.src('node_modules/@datalore/monaco-editor-core/min-maps/**/*')
 			.pipe(gulp.dest('release/min-maps')),
 
 		// other files
 		gulp.src([
-			'node_modules/monaco-editor-core/LICENSE',
-			'node_modules/monaco-editor-core/monaco.d.ts',
-			'node_modules/monaco-editor-core/ThirdPartyNotices.txt',
+			'node_modules/@datalore/monaco-editor-core/LICENSE',
+			'node_modules/@datalore/monaco-editor-core/monaco.d.ts',
+			'node_modules/@datalore/monaco-editor-core/ThirdPartyNotices.txt',
 			'README.md'
 		])
 		.pipe(addPluginDTS())
@@ -113,7 +113,7 @@ gulp.task('release', taskSeries(cleanReleaseTask, function() {
  */
 function releaseOne(type) {
 	return es.merge(
-		gulp.src('node_modules/monaco-editor-core/' + type + '/**/*')
+		gulp.src('node_modules/@datalore/monaco-editor-core/' + type + '/**/*')
 			.pipe(addPluginContribs(type))
 			.pipe(gulp.dest('release/' + type)),
 
@@ -246,9 +246,9 @@ function addPluginContribs(type) {
 function ESM_release() {
 	return es.merge(
 		gulp.src([
-			'node_modules/monaco-editor-core/esm/**/*',
+			'node_modules/@datalore/monaco-editor-core/esm/**/*',
 			// we will create our own editor.api.d.ts which also contains the plugins API
-			'!node_modules/monaco-editor-core/esm/vs/editor/editor.api.d.ts'
+			'!node_modules/@datalore/monaco-editor-core/esm/vs/editor/editor.api.d.ts'
 		])
 			.pipe(ESM_addImportSuffix())
 			.pipe(ESM_addPluginContribs('release/esm'))

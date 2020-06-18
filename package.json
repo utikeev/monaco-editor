@@ -1,7 +1,7 @@
 {
-  "name": "monaco-editor",
+  "name": "@datalore/monaco-editor",
   "private": true,
-  "version": "0.20.0",
+  "version": "0.20.0-1",
   "description": "A browser based code editor",
   "author": "Microsoft Corporation",
   "license": "MIT",
@@ -19,11 +19,12 @@
   "module": "./esm/vs/editor/editor.main.js",
   "repository": {
     "type": "git",
-    "url": "https://github.com/Microsoft/monaco-editor"
+    "url": "https://github.com/utikeev/monaco-editor"
   },
   "devDependencies": {
     "@types/chai": "^3.4.34",
     "@types/mocha": "^2.2.33",
+    "@datalore/monaco-editor-core": "~0.19.2-1",
     "chai": "^4.2.0",
     "clean-css": "^4.2.3",
     "css-loader": "^3.2.0",
@@ -33,7 +34,6 @@
     "gulp-typedoc": "^2.2.2",
     "mocha": "^6.2.2",
     "monaco-css": "2.7.0",
-    "monaco-editor-core": "0.20.0",
     "monaco-html": "2.7.0",
     "monaco-json": "2.9.0",
     "monaco-languages": "1.10.0",
