@@ -5457,6 +5457,11 @@ declare namespace monaco.languages {
         InsertAsSnippet = 4
     }
 
+    export interface InsertCompletionInfo {
+        commitChar: string;
+        position: Position;
+    }
+
     /**
      * A completion item represents a text snippet that is
      * proposed to complete text that is being typed.
@@ -5545,6 +5550,10 @@ declare namespace monaco.languages {
          * A command that should be run upon acceptance of this item.
          */
         command?: Command;
+        /**
+         * A custom insert handler which will be called instead of (#SnippetController2.insert).
+         */
+        insertHandler?: (insertCompletionInfo: InsertCompletionInfo) => void;
     }
 
     export interface CompletionList {
