@@ -2095,7 +2095,7 @@ declare namespace monaco.editor {
         readonly label: string;
         readonly alias: string;
         isSupported(): boolean;
-        run(): Promise<void>;
+        run(args?: any): Promise<void>;
     }
 
     export type IEditorModel = ITextModel | IDiffEditorModel;
@@ -5571,7 +5571,8 @@ declare namespace monaco.languages {
     export enum CompletionTriggerKind {
         Invoke = 0,
         TriggerCharacter = 1,
-        TriggerForIncompleteCompletions = 2
+        TriggerForIncompleteCompletions = 2,
+        UpdateSuggestions = 3
     }
 
     /**
@@ -5589,6 +5590,10 @@ declare namespace monaco.languages {
          * `undefined` if provider was not triggered by a character.
          */
         triggerCharacter?: string;
+        /**
+         * Was completion triggered automatically or explicitly by user.
+         */
+        auto: boolean;
     }
 
     /**
