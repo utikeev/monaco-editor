@@ -2,14 +2,37 @@
 monaco.languages.register({ id: 'mySpecialLanguage' });
 
 monaco.languages.registerHoverProvider('mySpecialLanguage', {
-	provideHover: function (model, position) {
-		return xhr('../playground.html').then(function (res) {
+	provideHover: function (model, position, token, context) {
+		return xhr('playground.generated/index.html').then(function (res) {
+			const modifiers = context.keyModifiers;
+
+			let text = '';
+			if (modifiers.includes(monaco.KeyMod.CtrlCmd)) {
+				text += 'CtrlCmd';
+			}
+			if (modifiers.includes(monaco.KeyMod.Alt)) {
+				text += 'Alt';
+			}
+			if (modifiers.includes(monaco.KeyMod.Shift)) {
+				text += 'Shift';
+			}
+			if (modifiers.includes(monaco.KeyMod.WinCtrl)) {
+				text += 'WinCtrl';
+			}
+
+			const contents = [
+				{ value: 'Modifiers: ' + text },
+				{ value: '**SOURCE**' },
+				{ value: '```html\n' + res.responseText.substring(0, 200) + '\n```' },
+				{ value: '' +
+							'<span>hello</span>' +
+							'<br/>' +
+							'<span>it\'s me</span>' +
+							'<table><tr><th>1</th><th>2</th></tr><tr><td>a</td><td>b</td></tr></table>', sanitized: true }
+			];
 			return {
 				range: new monaco.Range(1, 1, model.getLineCount(), model.getLineMaxColumn(model.getLineCount())),
-				contents: [
-					{ value: '**SOURCE**' },
-					{ value: '```html\n' + res.responseText.substring(0, 200) + '\n```' }
-				]
+				contents: contents,
 			}
 		});
 	}
