@@ -53,6 +53,9 @@ monaco.languages.registerHoverProvider('mySpecialLanguage', {
 			if (modifiers.includes(monaco.KeyMod.Shift)) {
 				text += 'Shift';
 			}
+			if (modifiers.includes(monaco.KeyMod.WinCtrl)) {
+				text += 'WinCtrl';
+			}
 
 			const contents = [
 				{ value: 'Modifiers: ' + text },
