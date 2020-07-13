@@ -6,6 +6,14 @@ monaco.languages.registerHoverProvider('mySpecialLanguage', {
 		return xhr('playground.generated/index.html').then(function (res) {
 			const modifiers = context.keyModifiers;
 
+			if (context.source === 2) {
+				console.log(position);
+				return {
+					range: new monaco.Range(1, 1, model.getLineCount(), model.getLineMaxColumn(model.getLineCount())),
+					contents: [ { value: 'Secret' }]
+				}
+			}
+
 			let text = '';
 			if (modifiers.includes(monaco.KeyMod.CtrlCmd)) {
 				text += 'CtrlCmd';
@@ -21,6 +29,7 @@ monaco.languages.registerHoverProvider('mySpecialLanguage', {
 			}
 
 			const contents = [
+				{ value: '[Show more](command:editor.action.showHover?{"position":{"lineNumber":1,"column":5}})', isTrusted: true },
 				{ value: 'Modifiers: ' + text },
 				{ value: '**SOURCE**' },
 				{ value: '```html\n' + res.responseText.substring(0, 200) + '\n```' },
