@@ -47,7 +47,7 @@ monaco.languages.registerHoverProvider('mySpecialLanguage', {
 				console.log(position);
 				return {
 					range: new monaco.Range(1, 1, model.getLineCount(), model.getLineMaxColumn(model.getLineCount())),
-					contents: [ { value: 'Secret' }]
+					contents: [ { value: '<a href="https://google.com">Secret link</a>', sanitized: true, rendered: true }]
 				}
 			}
 
