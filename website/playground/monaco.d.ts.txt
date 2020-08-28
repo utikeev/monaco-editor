@@ -3099,6 +3099,11 @@ declare namespace monaco.editor {
          */
         renderLineHighlightOnlyWhenFocus?: boolean;
         /**
+         * Controls if messages from markers should always be on top of hover list.
+         * Defaults to false.
+         */
+        renderMarkerMessagesFirst?: boolean;
+        /**
          * Inserting and deleting whitespace follows tab stops.
          */
         useTabStops?: boolean;
@@ -3935,46 +3940,47 @@ declare namespace monaco.editor {
         renderFinalNewline = 77,
         renderLineHighlight = 78,
         renderLineHighlightOnlyWhenFocus = 79,
-        renderValidationDecorations = 80,
-        renderWhitespace = 81,
-        revealHorizontalRightPadding = 82,
-        roundedSelection = 83,
-        rulers = 84,
-        scrollbar = 85,
-        scrollBeyondLastColumn = 86,
-        scrollBeyondLastLine = 87,
-        scrollPredominantAxis = 88,
-        selectionClipboard = 89,
-        selectionHighlight = 90,
-        selectOnLineNumbers = 91,
-        showFoldingControls = 92,
-        showHoverDefinition = 93,
-        showMultipleSignaturesAsList = 94,
-        showUnused = 95,
-        snippetSuggestions = 96,
-        smoothScrolling = 97,
-        stopRenderingLineAfter = 98,
-        suggest = 99,
-        suggestFontSize = 100,
-        suggestLineHeight = 101,
-        suggestOnTriggerCharacters = 102,
-        suggestSelection = 103,
-        tabCompletion = 104,
-        unusualLineTerminators = 105,
-        useTabStops = 106,
-        wordSeparators = 107,
-        wordWrap = 108,
-        wordWrapBreakAfterCharacters = 109,
-        wordWrapBreakBeforeCharacters = 110,
-        wordWrapColumn = 111,
-        wordWrapMinified = 112,
-        wrappingIndent = 113,
-        wrappingStrategy = 114,
-        editorClassName = 115,
-        pixelRatio = 116,
-        tabFocusMode = 117,
-        layoutInfo = 118,
-        wrappingInfo = 119
+        renderMarkerMessagesFirst = 80,
+        renderValidationDecorations = 81,
+        renderWhitespace = 82,
+        revealHorizontalRightPadding = 83,
+        roundedSelection = 84,
+        rulers = 85,
+        scrollbar = 86,
+        scrollBeyondLastColumn = 87,
+        scrollBeyondLastLine = 88,
+        scrollPredominantAxis = 89,
+        selectionClipboard = 90,
+        selectionHighlight = 91,
+        selectOnLineNumbers = 92,
+        showFoldingControls = 93,
+        showHoverDefinition = 94,
+        showMultipleSignaturesAsList = 95,
+        showUnused = 96,
+        snippetSuggestions = 97,
+        smoothScrolling = 98,
+        stopRenderingLineAfter = 99,
+        suggest = 100,
+        suggestFontSize = 101,
+        suggestLineHeight = 102,
+        suggestOnTriggerCharacters = 103,
+        suggestSelection = 104,
+        tabCompletion = 105,
+        unusualLineTerminators = 106,
+        useTabStops = 107,
+        wordSeparators = 108,
+        wordWrap = 109,
+        wordWrapBreakAfterCharacters = 110,
+        wordWrapBreakBeforeCharacters = 111,
+        wordWrapColumn = 112,
+        wordWrapMinified = 113,
+        wrappingIndent = 114,
+        wrappingStrategy = 115,
+        editorClassName = 116,
+        pixelRatio = 117,
+        tabFocusMode = 118,
+        layoutInfo = 119,
+        wrappingInfo = 120
     }
     export const EditorOptions: {
         acceptSuggestionOnCommitCharacter: IEditorOption<EditorOption.acceptSuggestionOnCommitCharacter, boolean>;
@@ -4057,6 +4063,7 @@ declare namespace monaco.editor {
         renderFinalNewline: IEditorOption<EditorOption.renderFinalNewline, boolean>;
         renderLineHighlight: IEditorOption<EditorOption.renderLineHighlight, 'all' | 'line' | 'none' | 'gutter'>;
         renderLineHighlightOnlyWhenFocus: IEditorOption<EditorOption.renderLineHighlightOnlyWhenFocus, boolean>;
+        renderMarkerMessagesFirst: IEditorOption<EditorOption.renderMarkerMessagesFirst, boolean>;
         renderValidationDecorations: IEditorOption<EditorOption.renderValidationDecorations, 'on' | 'off' | 'editable'>;
         renderWhitespace: IEditorOption<EditorOption.renderWhitespace, 'all' | 'none' | 'boundary' | 'selection'>;
         revealHorizontalRightPadding: IEditorOption<EditorOption.revealHorizontalRightPadding, number>;
