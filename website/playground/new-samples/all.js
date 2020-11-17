@@ -174,7 +174,13 @@ var PLAY_SAMPLES = [
 		name: "Definition provider example",
 		id: "extending-language-services-definition-provider-example",
 		path: "extending-language-services/definition-provider-example"
-	}
+	},
+  {
+    chapter: "Extending Language Services",
+    name: "Signature help provider example",
+    id: "extending-language-services-signature-provider-example",
+    path: "extending-language-services/signature-provider-example"
+  }
 ];
 
 if (typeof exports !== 'undefined') {
