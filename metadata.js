@@ -4,8 +4,8 @@
 		CORE: {
 			paths: {
 				src: '/vscode/out/vs',
-				'npm/dev': 'node_modules/monaco-editor-core/dev/vs',
-				'npm/min': 'node_modules/monaco-editor-core/min/vs',
+				'npm/dev': 'node_modules/@datalore/monaco-editor-core/dev/vs',
+				'npm/min': 'node_modules/@datalore/monaco-editor-core/min/vs',
 				built: '/vscode/out-monaco-editor-core/min/vs',
 				releaseDev: 'release/dev/vs',
 				releaseMin: 'release/min/vs',

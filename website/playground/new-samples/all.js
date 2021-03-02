@@ -174,6 +174,18 @@ var PLAY_SAMPLES = [
 		name: "Configure JSON defaults",
 		id: "extending-language-services-configure-json-defaults",
 		path: "extending-language-services/configure-json-defaults"
+	},
+  {
+    chapter: "Extending Language Services",
+    name: "Signature help provider example",
+    id: "extending-language-services-signature-provider-example",
+    path: "extending-language-services/signature-provider-example"
+	},
+	{
+		chapter: "Extending Language Services",
+		name: "Definition provider example",
+		id: "extending-language-services-definition-provider-example",
+		path: "extending-language-services/definition-provider-example"
 	}
 ];
 

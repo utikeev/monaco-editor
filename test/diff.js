@@ -1,4 +1,4 @@
-/// <reference path="../node_modules/monaco-editor-core/monaco.d.ts" />
+/// <reference path="../node_modules/@datalore/monaco-editor-core/monaco.d.ts" />
 define(['require'], function (require) {
 
 	var container = document.getElementById('container');
