@@ -1,7 +1,7 @@
 {
   "name": "@datalore/monaco-editor",
   "private": true,
-  "version": "0.22.3-33",
+  "version": "0.22.3-34",
   "description": "A browser based code editor",
   "author": "Microsoft Corporation",
   "license": "MIT",
@@ -23,7 +23,7 @@
     "event-stream": "4.0.1",
     "gulp": "^4.0.2",
     "monaco-css": "3.2.0",
-    "@datalore/monaco-editor-core": "0.22.0-33",
+    "@datalore/monaco-editor-core": "0.22.0-34",
     "monaco-html": "3.2.0",
     "monaco-json": "3.3.0",
     "monaco-languages": "2.2.0",
